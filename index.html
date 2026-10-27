@@ -2,13 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>BK Bhai - Premium Cricket Community</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
-    <link rel="stylesheet5" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Using FontAwesome via CDN properly -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -19,60 +17,78 @@
             font-family: 'Poppins', sans-serif;
         }
 
-        body {
+        html, body {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden; /* Scroll bilkul band kar diya gaya hai */
             background-color: #0c0a09;
             color: #ffffff;
-            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 15px;
             background-image: radial-gradient(circle at 50% 20%, #1c150c 0%, #080605 100%);
         }
 
         .phone-frame {
             width: 100%;
             max-width: 420px;
+            height: 100vh;
+            max-height: 850px;
             background: #090706;
-            border: 2px solid rgba(217, 169, 79, 0.2);
-            border-radius: 30px;
-            padding: 25px 20px;
+            border: none; /* Side borders aur frame bilkul hata diye gaye hain */
+            border-radius: 0;
+            padding: 20px 15px;
             text-align: center;
-            box-shadow: 0 0 35px rgba(212, 160, 23, 0.15);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             position: relative;
             overflow: hidden;
         }
 
+        @media (min-width: 480px) {
+            .phone-frame {
+                border-radius: 30px;
+                border: 1px solid rgba(217, 169, 79, 0.2);
+                box-shadow: 0 0 35px rgba(212, 160, 23, 0.15);
+                height: auto;
+            }
+        }
+
         /* Top Brand Header */
+        .header-section {
+            flex-shrink: 0;
+        }
+
         .crown {
             color: #facc15;
-            font-size: 24px;
+            font-size: 22px;
             margin-bottom: 2px;
             filter: drop-shadow(0 0 8px rgba(250, 204, 21, 0.6));
         }
 
         .brand-title {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 800;
             letter-spacing: 2px;
             color: #ffffff;
         }
 
         .brand-sub {
-            font-size: 10px;
+            font-size: 9px;
             font-weight: 600;
             letter-spacing: 3px;
             color: #d4af37;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         /* Main Headline */
         .headline {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 900;
             line-height: 1.2;
             text-transform: uppercase;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
             background: linear-gradient(180deg, #ffffff 40%, #a89045 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -81,12 +97,13 @@
         /* Central Badge Container with Circular Tags */
         .hero-circle-container {
             position: relative;
-            width: 230px;
-            height: 230px;
-            margin: 0 auto 25px;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 15px;
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-shrink: 0;
         }
 
         /* Outer Golden Ring Effect */
@@ -104,8 +121,8 @@
         }
 
         .center-avatar {
-            width: 190px;
-            height: 190px;
+            width: 165px;
+            height: 165px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid #d4af37;
@@ -118,9 +135,9 @@
             background: linear-gradient(135deg, #1e1b18 0%, #0d0b09 100%);
             border: 1px solid #d4af37;
             color: #ffffff;
-            font-size: 10px;
+            font-size: 9px;
             font-weight: 700;
-            padding: 6px 14px;
+            padding: 5px 10px;
             border-radius: 20px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.5);
             letter-spacing: 0.5px;
@@ -128,37 +145,37 @@
         }
 
         .badge-toss {
-            top: 25px;
-            left: -15px;
+            top: 15px;
+            left: -20px;
         }
 
         .badge-match {
-            top: 25px;
-            right: -20px;
-        }
-
-        .badge-session {
-            bottom: 30px;
+            top: 15px;
             right: -25px;
         }
 
+        .badge-session {
+            bottom: 25px;
+            right: -30px;
+        }
+
         .badge-expert {
-            bottom: 10px;
+            bottom: 5px;
             left: 50%;
             transform: translateX(-50%);
             background: #d4af37;
             color: #000;
-            font-size: 9px;
-            padding: 3px 10px;
+            font-size: 8px;
+            padding: 2px 8px;
         }
 
         /* Description Paragraph */
         .description {
-            font-size: 13px;
+            font-size: 12px;
             color: #c0c0c0;
-            line-height: 1.5;
-            margin-bottom: 25px;
-            padding: 0 10px;
+            line-height: 1.4;
+            margin-bottom: 15px;
+            padding: 0 5px;
         }
 
         .description span {
@@ -171,27 +188,28 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
+            gap: 10px;
             background: linear-gradient(135deg, #facc15 0%, #ca8a04 100%);
             color: #090706;
             text-decoration: none;
-            padding: 16px 20px;
+            padding: 14px 20px;
             border-radius: 50px;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 800;
             letter-spacing: 0.5px;
-            box-shadow: 0 8px 25px rgba(250, 204, 21, 0.4);
+            box-shadow: 0 6px 20px rgba(250, 204, 21, 0.4);
             transition: all 0.3s ease;
-            margin-bottom: 30px;
+            margin-bottom: 15px;
+            flex-shrink: 0;
         }
 
         .btn-telegram:hover {
             transform: scale(1.03);
-            box-shadow: 0 12px 30px rgba(250, 204, 21, 0.6);
+            box-shadow: 0 10px 25px rgba(250, 204, 21, 0.6);
         }
 
         .btn-telegram i {
-            font-size: 20px;
+            font-size: 18px;
         }
 
         /* Footer Features Icons */
@@ -199,7 +217,8 @@
             display: flex;
             justify-content: space-around;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
-            padding-top: 20px;
+            padding-top: 12px;
+            flex-shrink: 0;
         }
 
         .feature-item {
@@ -208,12 +227,12 @@
 
         .feature-item i {
             color: #d4af37;
-            font-size: 16px;
-            margin-bottom: 6px;
+            font-size: 14px;
+            margin-bottom: 4px;
         }
 
         .feature-item p {
-            font-size: 9px;
+            font-size: 8px;
             color: #9ca3af;
             font-weight: 600;
             text-transform: uppercase;
@@ -221,11 +240,12 @@
         }
 
         .footer-tagline {
-            margin-top: 20px;
-            font-size: 8px;
+            margin-top: 8px;
+            font-size: 7px;
             color: #6b7280;
             letter-spacing: 2px;
             text-transform: uppercase;
+            flex-shrink: 0;
         }
     </style>
 </head>
@@ -233,12 +253,14 @@
 
     <div class="phone-frame">
         <!-- Header -->
-        <div class="crown">👑</div>
-        <div class="brand-title">BK BHAI</div>
-        <div class="brand-sub">PREMIUM CRICKET COMMUNITY</div>
+        <div class="header-section">
+            <div class="crown">👑</div>
+            <div class="brand-title">BK BHAI</div>
+            <div class="brand-sub">PREMIUM CRICKET COMMUNITY</div>
 
-        <!-- Main Heading -->
-        <h1 class="headline">Cricket ki har halchal, ek jagah.</h1>
+            <!-- Main Heading -->
+            <h1 class="headline">Cricket ki har halchal, ek jagah.</h1>
+        </div>
 
         <!-- Center Image & Tags Area -->
         <div class="hero-circle-container">
@@ -247,7 +269,7 @@
             <div class="badge-tag badge-match">📊 MATCH UPDATE</div>
             <div class="badge-tag badge-session">⚡ SESSION UPDATE</div>
             
-            <!-- Central Image (Aap ise apne image se replace kar sakte hain) -->
+            <!-- Central Image -->
             <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=500&auto=format&fit=crop&q=80" alt="BK Bhai Cricket" class="center-avatar">
             
             <div class="badge-tag badge-expert">CRICKET EXPERT</div>
