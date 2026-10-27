@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanvi Roy - Official Landing Page</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a, #1e1b4b);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 35px 25px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .profile-img-container {
+            position: relative;
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 20px;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #6366f1;
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+        }
+
+        h1 {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #f8fafc;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.2);
+            color: #818cf8;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+        }
+
+        p.bio {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .links-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .btn-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.07);
+            color: #ffffff;
+            padding: 14px 20px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-link i.left-icon {
+            font-size: 18px;
+            margin-right: 12px;
+            color: #818cf8;
+        }
+
+        .btn-link span {
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        .btn-link i.right-icon {
+            font-size: 14px;
+            color: #64748b;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-link:hover {
+            background: #6366f1;
+            border-color: #6366f1;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-link:hover i {
+            color: #ffffff;
+            transform: translateX(3px);
+        }
+
+        footer {
+            margin-top: 35px;
+            font-size: 12px;
+            color: #64748b;
+        }
+
+        footer a {
+            color: #818cf8;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Profile Image -->
+        <div class="profile-img-container">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&auto=format&fit=crop&q=80" alt="BK Bhai" class="profile-img">
+        </div>
+
+        <!-- Name & Bio -->
+        <h1>Tanvi Roy</h1>
+        <div class="badge"><i class="fa-solid fa-check-circle"></i> Official Page</div>
+        <p class="bio">Welcome to my official landing page. Connect with me across all social platforms and check out my latest updates below!</p>
+
+        <!-- Links Section -->
+        <div class="links-list">
+            <!-- Instagram -->
+            <a href="https://instagram.com" target="_blank" class="btn-link">
+                <i class="fa-brands fa-instagram left-icon"></i>
+                <span>Instagram Profile</span>
+                <i class="fa-solid fa-chevron-right right-icon"></i>
+            </a>
+
+            <!-- WhatsApp / Chat -->
+            <a href="https://whatsapp.com" target="_blank" class="btn-link">
+                <i class="fa-brands fa-whatsapp left-icon" style="color: #25d366;"></i>
+                <span>Chat on WhatsApp</span>
+                <i class="fa-solid fa-chevron-right right-icon"></i>
+            </a>
+
+            <!-- YouTube / Content -->
+            <a href="https://youtube.com" target="_blank" class="btn-link">
+                <i class="fa-brands fa-youtube left-icon" style="color: #ef4444;"></i>
+                <span>Watch My Videos</span>
+                <i class="fa-solid fa-chevron-right right-icon"></i>
+            </a>
+
+            <!-- Telegram / Community -->
+            <a href="https://t.me/+vCf11jqiELowYzI1" target="_blank" class="btn-link">
+                <i class="fa-brands fa-telegram left-icon" style="color: #38bdf8;">Join Community</span>
+                <i class="fa-solid fa-chevron-right right-icon"></i>
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            &copy; 2026 Tanvi Roy. All rights reserved.
+        </footer>
+    </div>
+
+</body>
+</html>
