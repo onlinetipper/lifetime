@@ -1,79 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#050505">
-<title>BK BHAI</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BK Bhai - Premium Cricket Community</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet5" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Using FontAwesome via CDN properly -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-<style>
-*{box-sizing:border-box}
-html,body{margin:0;min-height:100%;background:#020202}
-body{overflow-x:hidden;font-family:Arial,sans-serif}
-.stage{min-height:100svh;display:grid;place-items:center;background:#020202}
-.poster{position:relative;width:min(100vw,486px);aspect-ratio:9/16;overflow:hidden;background:#070707}
-.poster-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.dp-wrap{position:absolute;z-index:8;left:50%;top:31.6%;width:58.5%;aspect-ratio:1;transform:translateX(-50%);animation:float 3.6s infinite ease-in-out}
-.dp-image{width:100%;height:100%;border-radius:50%;object-fit:cover}
-.dp-glow{position:absolute;inset:-5%;border-radius:50%;background:radial-gradient(circle,rgba(255,218,106,.4),transparent 70%);filter:blur(10px)}
-.telegram-hit{position:absolute;z-index:12;left:11%;top:76%;width:78%;height:7%;border-radius:22px;cursor:pointer}
-.button-shine{position:absolute;top:-20%;left:-38%;width:28%;height:140%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-22deg);animation:shine 3s infinite}
-.spark{position:absolute;width:3px;height:3px;border-radius:50%;background:#ffd66a;box-shadow:0 0 12px #ffd66a;animation:sparkle 3s infinite}
-.spark-1{left:14%;top:34%}
-.spark-2{left:84%;top:29%;animation-delay:.7s}
-.spark-3{left:17%;top:67%;animation-delay:1s}
-.spark-4{left:88%;top:70%;animation-delay:1.5s}
-@keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-12px)}}
-@keyframes shine{0%{left:-38%}100%{left:128%}}
-@keyframes sparkle{0%,100%{opacity:0}50%{opacity:1}}
-@media(min-width:700px){.poster{height:min(94vh,900px);width:auto;max-width:506px}}
-</style>
+        body {
+            background-color: #0c0a09;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            background-image: radial-gradient(circle at 50% 20%, #1c150c 0%, #080605 100%);
+        }
 
-<!-- Meta Pixel -->
-<script>
-!function(f,b,e,v,n,t,s){
-if(f.fbq)return;n=f.fbq=function(){
-n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)
-}(window,document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
+        .phone-frame {
+            width: 100%;
+            max-width: 420px;
+            background: #090706;
+            border: 2px solid rgba(217, 169, 79, 0.2);
+            border-radius: 30px;
+            padding: 25px 20px;
+            text-align: center;
+            box-shadow: 0 0 35px rgba(212, 160, 23, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
 
-fbq('init','YOUR_PIXEL_ID');
-fbq('track','PageView');
-</script>
+        /* Top Brand Header */
+        .crown {
+            color: #facc15;
+            font-size: 24px;
+            margin-bottom: 2px;
+            filter: drop-shadow(0 0 8px rgba(250, 204, 21, 0.6));
+        }
+
+        .brand-title {
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #ffffff;
+        }
+
+        .brand-sub {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: #d4af37;
+            margin-bottom: 20px;
+        }
+
+        /* Main Headline */
+        .headline {
+            font-size: 28px;
+            font-weight: 900;
+            line-height: 1.2;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            background: linear-gradient(180deg, #ffffff 40%, #a89045 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Central Badge Container with Circular Tags */
+        .hero-circle-container {
+            position: relative;
+            width: 230px;
+            height: 230px;
+            margin: 0 auto 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Outer Golden Ring Effect */
+        .hero-circle-container::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            border: 2px dashed rgba(212, 175, 55, 0.4);
+            animation: rotateRing 20s linear infinite;
+        }
+
+        @keyframes rotateRing {
+            100% { transform: rotate(360deg); }
+        }
+
+        .center-avatar {
+            width: 190px;
+            height: 190px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #d4af37;
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Floating Badges around the circle */
+        .badge-tag {
+            position: absolute;
+            background: linear-gradient(135deg, #1e1b18 0%, #0d0b09 100%);
+            border: 1px solid #d4af37;
+            color: #ffffff;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .badge-toss {
+            top: 25px;
+            left: -15px;
+        }
+
+        .badge-match {
+            top: 25px;
+            right: -20px;
+        }
+
+        .badge-session {
+            bottom: 30px;
+            right: -25px;
+        }
+
+        .badge-expert {
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #d4af37;
+            color: #000;
+            font-size: 9px;
+            padding: 3px 10px;
+        }
+
+        /* Description Paragraph */
+        .description {
+            font-size: 13px;
+            color: #c0c0c0;
+            line-height: 1.5;
+            margin-bottom: 25px;
+            padding: 0 10px;
+        }
+
+        .description span {
+            color: #d4af37;
+            font-weight: 600;
+        }
+
+        /* Telegram CTA Button */
+        .btn-telegram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #facc15 0%, #ca8a04 100%);
+            color: #090706;
+            text-decoration: none;
+            padding: 16px 20px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            box-shadow: 0 8px 25px rgba(250, 204, 21, 0.4);
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .btn-telegram:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 30px rgba(250, 204, 21, 0.6);
+        }
+
+        .btn-telegram i {
+            font-size: 20px;
+        }
+
+        /* Footer Features Icons */
+        .footer-features {
+            display: flex;
+            justify-content: space-around;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 20px;
+        }
+
+        .feature-item {
+            text-align: center;
+        }
+
+        .feature-item i {
+            color: #d4af37;
+            font-size: 16px;
+            margin-bottom: 6px;
+        }
+
+        .feature-item p {
+            font-size: 9px;
+            color: #9ca3af;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-tagline {
+            margin-top: 20px;
+            font-size: 8px;
+            color: #6b7280;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+    </style>
 </head>
-
 <body>
-<main class="stage">
-<div class="poster">
 
-<img class="poster-image"
-src="assets/bk-bhai-style-1.png">
+    <div class="phone-frame">
+        <!-- Header -->
+        <div class="crown">👑</div>
+        <div class="brand-title">BK BHAI</div>
+        <div class="brand-sub">PREMIUM CRICKET COMMUNITY</div>
 
-<div class="dp-wrap">
-<div class="dp-glow"></div>
-<img class="dp-image"
-src="assets/bk-bhai-dp.png">
-</div>
+        <!-- Main Heading -->
+        <h1 class="headline">Cricket ki har halchal, ek jagah.</h1>
 
-<div class="spark spark-1"></div>
-<div class="spark spark-2"></div>
-<div class="spark spark-3"></div>
-<div class="spark spark-4"></div>
+        <!-- Center Image & Tags Area -->
+        <div class="hero-circle-container">
+            <!-- Floating Badges -->
+            <div class="badge-tag badge-toss">🪙 TOSS</div>
+            <div class="badge-tag badge-match">📊 MATCH UPDATE</div>
+            <div class="badge-tag badge-session">⚡ SESSION UPDATE</div>
+            
+            <!-- Central Image (Aap ise apne image se replace kar sakte hain) -->
+            <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=500&auto=format&fit=crop&q=80" alt="BK Bhai Cricket" class="center-avatar">
+            
+            <div class="badge-tag badge-expert">CRICKET EXPERT</div>
+        </div>
 
-<a class="telegram-hit"
-href="https://t.me/YOUR_CHANNEL"
-target="_blank"
-rel="noopener"
-onclick="if(window.fbq)fbq('track','Lead');">
-<span class="button-shine"></span>
-</a>
+        <!-- Description -->
+        <p class="description">
+            Toss Updates, Match Updates aur Session Updates — simple, fast aur ek premium community experience ke saath.
+        </p>
 
-</div>
-</main>
+        <!-- Call to Action Button -->
+        <a href="https://t.me/your_telegram_link" target="_blank" class="btn-telegram">
+            <i class="fa-brands fa-telegram"></i> JOIN TELEGRAM
+        </a>
+
+        <!-- Bottom Icons Bar -->
+        <div class="footer-features">
+            <div class="feature-item">
+                <i class="fa-solid fa-bolt"></i>
+                <p>Fast Updates</p>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-shield-halved"></i>
+                <p>Daily Coverage</p>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-users"></i>
+                <p>BK Community</p>
+            </div>
+        </div>
+
+        <div class="footer-tagline">
+            Cricket Brings Us Together
+        </div>
+    </div>
+
 </body>
 </html>
